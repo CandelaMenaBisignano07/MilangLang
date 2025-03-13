@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.consolePills {
+    @apply before:relative before:mr-2 before:px-1 before:py-3 before:rounded-sm flex items-center font-mono whitespace-nowrap
+}
+
+.selected{
+    @apply dark:text-[#0a2463] border-b-2 border-[#75aadb] text-[#75aadb]
+}

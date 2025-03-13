@@ -1,0 +1,37 @@
+Program → Statement*
+
+Statement → VariableDeclaration
+           | ConstantDeclaration        
+           | Assignment
+           | IfStatement
+           | Loop
+           | FunctionDef
+           | FunctionCall
+           | ReturnStatement
+
+VariableDeclaration → "empanada" IDENTIFIER ("choripan" Expr)?
+ConstantDeclaration → "dulceDeLeche" IDENTIFIER "choripan" Expr
+Assignment → "vitelTone" IDENTIFIER AssignmentOperator Expr
+AssignmentOperator → "choripan" | "chimichurri" | "rogel" | "locro" | "sanguchitoDeMiga"
+
+Expr → LogicExpr
+LogicExpr → ComparisonExpr (LogicOperator ComparisonExpr)*
+ComparisonExpr → ArithmeticExpr (ComparisonOperator ArithmeticExpr)?
+ArithmeticExpr → Term (ArithmeticOperator Term)*
+Term → Factor (("*" | "/") Factor)*
+Factor → NUMBER | STRING | IDENTIFIER | "(" Expr ")" | "medialuna" | "bolaDeFraile" | [(Expr ("," Expr)*?)?]
+
+IfStatement → "milanesa" "(" Expr ")" "{" NEW_LINE Block "}"("provoleta" "{" NEW_LINE Block "}")?
+
+Loop → "mate"((VariableDeclaration | ConstantDeclaration) "librito" iterable)
+FunctionDef → "asado" IDENTIFIER "(" (IDENTIFIER ("," IDENTIFIER)*)? ")""{" NEW_LINE Block "}"
+FunctionCall → "chinchulin" IDENTIFIER "(" (Expr ("," Expr)*)? ")"
+
+ReturnStatement → "alfajor" Expr?
+
+ArithmeticOperator → "faina" | "chocotorta" | "fugazza" | "vacio" | "salsaCriolla"
+ComparisonOperator → "fernet" | "matambreALaPizza" | "tortaFrita" | "vigilante" | "balcarce" | "cubanitos"
+LogicOperator → "pastelitosCriollos" | "dulceDeBatata" | "humita"
+
+Block → (Statement NEW_LINE)*
+
