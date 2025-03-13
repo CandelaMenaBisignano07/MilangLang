@@ -76,8 +76,8 @@ const builtInFunctionsCompletion = (range, isFunctionCallCompletion)=>[
     {
         label: '"mantecol"',
         kind: monaco.languages.CompletionItemKind.Function,
-        documentation: "El push de milangLang.\nchinchulin mantecol (arr:any[], firstItem:any,...items: any[]): number",
-        insertText: isFunctionCallCompletion ? 'mantecol(arr, firstObj, ...args)' : 'chinchulin mantecol(arr, firstObj, ...args)',
+        documentation: "El push de milangLang.\nchinchulin mantecol (arr:any[],...items: any[]): number",
+        insertText: isFunctionCallCompletion ? 'mantecol(arr, ...args)' : 'chinchulin mantecol(arr, ...args)',
         insertTextRules:monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
         range: range,
     },
@@ -513,7 +513,7 @@ const docsSections = [
             "values": [
                 ["console.log", "mateCocido(...args)", "chinchulin mateCocido(\"hola mundo!\")"],
                 ["split", "bizcochuelo(obj: iterable al que le aplicamos el split, sep, limit)", "chinchulin bizcochuelo(\"hola como estas\", \" \")"],
-                ["push", "mantecol(obj: array al que le aplicamos el push, element, ...args)", "chinchulin bizcochuelo([1,2,3],4,5)"],
+                ["push", "mantecol(obj: array al que le aplicamos el push, ...args)", "chinchulin bizcochuelo([1,2,3],4,5)"],
                 ["length", "mondongo(obj: iterable del que queremos recuperar su propiedad length)", "chinchulin mondongo(\"123456\")"],
                 ["splice", "pionono(obj: array al que le aplicamos el splice, start,...args)", "chinchulin pionono([1,2,3,4], 1)"]
             ]
